@@ -1,10 +1,10 @@
-GPU=0
-CUDNN=0
-CUDNN_HALF=0
-OPENCV=0
-AVX=0
-OPENMP=0
-LIBSO=0
+GPU=1
+CUDNN=1
+CUDNN_HALF=1
+OPENCV=1
+AVX=1
+OPENMP=1
+LIBSO=1
 ZED_CAMERA=0
 ZED_CAMERA_v2_8=0
 
@@ -17,9 +17,9 @@ ZED_CAMERA_v2_8=0
 USE_CPP=0
 DEBUG=0
 
-ARCH= -gencode arch=compute_50,code=[sm_50,compute_50] \
-      -gencode arch=compute_52,code=[sm_52,compute_52] \
-	    -gencode arch=compute_61,code=[sm_61,compute_61]
+#ARCH= -gencode arch=compute_50,code=[sm_50,compute_50] \
+#      -gencode arch=compute_52,code=[sm_52,compute_52] \
+#      -gencode arch=compute_61,code=[sm_61,compute_61]
 
 OS := $(shell uname)
 
@@ -48,7 +48,7 @@ OS := $(shell uname)
 # ARCH= -gencode arch=compute_62,code=[sm_62,compute_62]
 
 # Tesla V100
-# ARCH= -gencode arch=compute_70,code=[sm_70,compute_70]
+ARCH= -gencode arch=compute_70,code=[sm_70,compute_70]
 
 # Jetson XAVIER, XAVIER NX
 # ARCH= -gencode arch=compute_72,code=[sm_72,compute_72]
@@ -84,12 +84,12 @@ APPNAMESO=uselib
 endif
 
 ifeq ($(USE_CPP), 1)
-CC=g++
+CC=clang++
 else
-CC=gcc
+CC=clang
 endif
 
-CPP=g++ -std=c++11
+CPP=clang++ -std=c++11
 NVCC=nvcc
 OPTS=-Ofast
 LDFLAGS= -lm -pthread
