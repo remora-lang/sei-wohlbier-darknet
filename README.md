@@ -5,6 +5,14 @@
 * Recommended GitHub repo for Darknet/YOLO:  https://github.com/hank-ai/darknetcv/
 * Hank.ai and Darknet/YOLO:  https://hank.ai/darknet-welcomes-hank-ai-as-official-sponsor-and-commercial-entity/
 
+
+## re. "pseudo" fork
+
+Basic github doesn't allow forks of private repos.
+This is a clone of https://github.com/sei-jgwohlbier/darknet
+To make a PR against https://github.com/sei-jgwohlbier/darknet, create
+a feature branch and create a PR at https://github.com/sei-jgwohlbier/darknet.
+
 ## (neural networks for object detection)
 
 * Paper **YOLOv7**: https://arxiv.org/abs/2207.02696
