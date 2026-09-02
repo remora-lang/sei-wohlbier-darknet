@@ -1,6 +1,6 @@
 GPU=1
-CUDNN=1
-CUDNN_HALF=1
+CUDNN=0
+CUDNN_HALF=0
 OPENCV=1
 AVX=1
 OPENMP=1
@@ -20,6 +20,9 @@ DEBUG=0
 #ARCH= -gencode arch=compute_50,code=[sm_50,compute_50] \
 #      -gencode arch=compute_52,code=[sm_52,compute_52] \
 #      -gencode arch=compute_61,code=[sm_61,compute_61]
+
+# for nvidia rtx a2000 laptop gpu:
+ARCH= -gencode arch=compute_86,code=[sm_86,compute_86]
 
 OS := $(shell uname)
 
